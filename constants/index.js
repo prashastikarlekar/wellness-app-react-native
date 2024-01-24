@@ -1,5 +1,6 @@
 /** @format */
 
+export const rapidApiKey = "94462ce44cmshd99df8f1889720fp174becjsn09560468ab40";
 export const sliderImages = [
 	require("../assets/images/slide1.png"),
 	require("../assets/images/slide2.png"),
