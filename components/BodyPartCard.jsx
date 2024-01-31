@@ -36,7 +36,7 @@ export default function BodyPartCard({ item, index, router }) {
 				<Text
 					style={{ fontSize: hp(2.3) }}
 					className='text-white font-semibold text-center tracking-wide'>
-					{item?.name}
+					{item?.name.charAt(0).toUpperCase() + item?.name.slice(1)}
 				</Text>
 			</TouchableOpacity>
 		</Animated.View>

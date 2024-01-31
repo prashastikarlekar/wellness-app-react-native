@@ -48,7 +48,7 @@ export default function Exercises() {
 				<Text
 					style={{ fontSize: hp(3) }}
 					className='font-semibold text-neutral-700'>
-					{item.name} exercises
+					{item.name.charAt(0).toUpperCase() + item.name.slice(1)} Exercises
 				</Text>
 				<View className='mb-10'>
 					<ExerciseList data={exercises} />

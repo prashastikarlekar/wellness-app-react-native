@@ -7,10 +7,14 @@ import {
 	widthPercentageToDP as wp,
 	heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import Animated, { FadeInDown } from "react-native-reanimated";
 
 export default function ExerciseCard({ item, router, index }) {
 	return (
-		<View>
+		<Animated.View
+			entering={FadeInDown.duration(400)
+				.delay(index * 200)
+				.springify()}>
 			<TouchableOpacity
 				onPress={() =>
 					router.push({ pathname: "/exerciseDetails", params: item })
@@ -27,9 +31,11 @@ export default function ExerciseCard({ item, router, index }) {
 				<Text
 					style={{ fontSize: hp(1.7) }}
 					className='text-neutral-700 font-semibold ml-1 tracking-wide'>
-					{item?.name?.length > 20 ? item.name.slice(0, 20) + "..." : item.name}
+					{item?.name?.length > 20
+						? item.name.charAt(0).toUpperCase() + item.name.slice(1, 20) + "..."
+						: item.name.charAt(0).toUpperCase() + item.name.slice(1)}
 				</Text>
 			</TouchableOpacity>
-		</View>
+		</Animated.View>
 	);
 }
