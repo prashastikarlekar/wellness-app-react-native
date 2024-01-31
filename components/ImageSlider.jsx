@@ -13,7 +13,7 @@ export default function ImageSlider() {
 	return (
 		<Carousel
 			data={sliderImages}
-			loop={false}
+			loop={true}
 			autoplay={true}
 			renderItem={ItemCard}
 			hasParallaxImages={true}

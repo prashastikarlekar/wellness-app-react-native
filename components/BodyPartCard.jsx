@@ -1,6 +1,7 @@
 /** @format */
 
 import { View, Text, Image } from "react-native";
+import Animated, { FadeInDown } from "react-native-reanimated";
 import React from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import {
@@ -8,9 +9,13 @@ import {
 	heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { LinearGradient } from "expo-linear-gradient";
+
 export default function BodyPartCard({ item, index, router }) {
 	return (
-		<View>
+		<Animated.View
+			entering={FadeInDown.duration(400)
+				.delay(index * 200)
+				.springify()}>
 			<TouchableOpacity
 				onPress={() => router.push({ pathname: "/exercises", params: item })}
 				style={{ width: wp(44), height: wp(52) }}
@@ -34,6 +39,6 @@ export default function BodyPartCard({ item, index, router }) {
 					{item?.name}
 				</Text>
 			</TouchableOpacity>
-		</View>
+		</Animated.View>
 	);
 }

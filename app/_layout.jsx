@@ -10,10 +10,14 @@ export default function _layout() {
 		<Stack screenOptions={{ headerShown: false }}>
 			<Stack.Screen
 				name='exercises'
-				options={{ presentation: "fullscreenmodal" }}
+				options={{ presentation: "fullScreenModal" }}
 			/>
 			<Stack.Screen
 				name='exerciseDetails'
+				screenOptions={{
+					headerShown: false,
+					gestureEnabled: true,
+				}}
 				options={{ presentation: "modal" }}
 			/>
 		</Stack>
